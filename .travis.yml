@@ -1,14 +1,13 @@
-language: php
-php:
-  - 5.6
-
-before_install:
-  - openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv -in .travis/travis_rsa.enc -out ~/.ssh/travis_rsa -d
-  - chmod 600 ~/.ssh/travis_rsa
-
-deploy:
-  skip_cleanup: true
+--- 
+before_install: 
+  - "openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv -in .travis/travis_rsa.enc -out ~/.ssh/travis_rsa -d"
+  - "chmod 600 ~/.ssh/travis_rsa"
+deploy: 
   provider: script
-  script: "./.travis/deploy.sh"
-  on:
+  script: .travis/deploy.sh
+  skip_cleanup: true
+  true: 
     all_branches: true
+language: php
+php: 
+  - 5.6

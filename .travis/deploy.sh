@@ -15,11 +15,13 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     git config user.email "travis@test.com"
 
     # commit compressed files and push it to remote    
+    git push -f deploy master
+    
     git add .
     git status # debug    
     git commit -m "Deploy from Travis - build {$TRAVIS_BUILD_NUMBER}"
 
-    echo "Sends build"  	
+    
     git push -f deploy master
 else
 

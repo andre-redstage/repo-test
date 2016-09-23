@@ -6,12 +6,9 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv
   -in travis_rsa.enc -out travis_rsa -d
 
-matrix:
-  allow_failures:
-    - php: 5.6
-
 deploy:
+  skip_cleanup: true
   provider: script
-  script: .travis/deploy.sh
+  script: "./.travis/deploy.sh"
   on:
-    all_branches: true
+    branch: master

@@ -10,6 +10,7 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     # setup ssh agent, git config and remote
     git status # debug
     eval "$(ssh-agent -s)"
+    
     ssh-add ~/.ssh/travis_rsa
     git remote -v
     git remote add deploy "ssh://travis@104.236.118.124://var/www/repotest"

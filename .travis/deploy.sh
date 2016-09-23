@@ -5,9 +5,7 @@ set -xe
 
 if [ $TRAVIS_BRANCH == "master" ] ; then
 
-	chmod 600 ~/.ssh/travis_rsa
-	echo "Clears git information"
-  	rm -rf .git
+	chmod 600 ~/.ssh/travis_rsa	
 
     # setup ssh agent, git config and remote
     git status # debug

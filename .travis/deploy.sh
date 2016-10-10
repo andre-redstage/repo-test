@@ -7,7 +7,7 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     set -x	
     # setup ssh agent, git config and remote    
     openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv -in deploy-key.enc -out deploy-key -d
-    rm deploy-key.enc # Don't need it anymore
+    
     chmod 600 deploy-key
     mv deploy-key ~/.ssh/id_rsa
 

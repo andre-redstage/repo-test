@@ -6,9 +6,8 @@ php:
 before_script:
 - echo -e "Host 104.236.118.124\n\tStrictHostKeyChecking no" >> ~/.ssh/config
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv
-  -in deploy-key.enc -out deploy-key -d
+#before_install:
+#- openssl aes-256-cbc -K $encrypted_4dc565c56c51_key -iv $encrypted_4dc565c56c51_iv -in deploy-key.enc -out deploy-key -d  
 
 matrix:
   allow_failures:

@@ -15,7 +15,7 @@ if [ $TRAVIS_BRANCH == "master" ] ; then
     # ssh-add ~/.ssh/deploy-key        
     # chmod 600 ~/.ssh/deploy-key 
 
-    git remote add deploy "travis@104.236.118.124:/var/www/repotest"
+    git remote add deploy "ssh://travis@104.236.118.124//var/www/repotest/repotest.git"
     git config user.name "Travis CI"
     git config user.email "travis@test.com"
 

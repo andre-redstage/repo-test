@@ -5,11 +5,11 @@ set -xe
 
 if [ $TRAVIS_BRANCH == "master" ] ; then
 
-	chmod 600 ~/.ssh/travis_rsa	
+	chmod 600 ~/.ssh/deploy-key	
 
     # setup ssh agent, git config and remote    
     eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/travis_rsa        
+    ssh-add ~/.ssh/deploy-key        
     git remote add deploy "travis@104.236.118.124:/var/www/repotest"
     git config user.name "Travis CI"
     git config user.email "travis@test.com"
